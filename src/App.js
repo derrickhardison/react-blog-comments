@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import faker from "faker";
+import CommentDetail from "./components/CommentDetail";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="ui container comments">
+        <CommentDetail
+          author="Sam"
+          date="Today at 11:00AM"
+          text="Nice blog post!"
+          photo={faker.image.image()}
+        />
+        <CommentDetail
+          author="Alex"
+          date="Today at 3:00PM"
+          text="I totally agree!"
+          photo={faker.image.image()}
+        />
+        <CommentDetail
+          author="Jane"
+          date="Today at 8:00PM"
+          text="Thanks for sharing!"
+          photo={faker.image.image()}
+        />
+      </div>
     </div>
   );
 }
 
 export default App;
+
+// npm install faker@5.5.3
+// <img alt="avatar" src={faker.image.image()} />
